@@ -19,11 +19,11 @@ const router = createBrowserRouter([
         path: "classdetails",
         element: <ClassRoom />,
       },
+      {
+        path: "signup",
+        element: <Signup />,
+      },
     ],
-  },
-  {
-    path: "signup",
-    element: <Signup />,
   },
   {
     path: "login",

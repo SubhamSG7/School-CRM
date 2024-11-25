@@ -1,9 +1,9 @@
 import React from "react";
-
+import Wrapper from "../Components/Wrapper";
 function HomePage() {
   return (
     <>
-      <h1>Hello</h1>
+      <Wrapper />
     </>
   );
 }

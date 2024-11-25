@@ -3,6 +3,7 @@ export function validation(type, value) {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const mobileRegex = /^(\+?\d{1,3}[-\s]?)?\d{10}$/;
   const dobRegex = /^(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
+  const passwordRegex = /^[a-zA-Z0-9]{7,}$/;
 
   if (value) {
     switch (type) {
@@ -21,13 +22,17 @@ export function validation(type, value) {
           ? null
           : `${type} to be selected`;
       case "class":
-        return [1, 2, 3, 4, 5, 6, 7, 8].includes(value)
+        return [1, 2, 3, 4, 5, 6, 7, 8].includes(parseInt(value))
           ? null
           : `${type} cannot be empty`;
       case "subject":
         return ["English", "Hindi", "Maths", "Science", "EVS"].includes(value)
           ? null
           : `${type} cannot be empty`;
+      case "password":
+        return !passwordRegex.test(value)
+          ? `${type} Should be atleast 7 characters and alphanumeric`
+          : null;
     }
   } else {
     return `${type} cannot be empty`;

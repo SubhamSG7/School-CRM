@@ -1,8 +1,13 @@
 import React from "react";
-import Wrapper from "./Components/Wrapper";
+import "react-toastify/dist/ReactToastify.css";
+import HomePage from "./Pages/HomePage";
 
 const App = () => {
-  return <Wrapper />;
+  return (
+    <>
+      <HomePage />
+    </>
+  );
 };
 
 export default App;
