@@ -13,6 +13,7 @@ function Signup() {
   const { role, classes, subjects, error, userInfo } = useSelector(
     (state) => state.signupslice
   );
+  console.log(userInfo);
   function handleSubmit(e) {
     e.preventDefault();
     if (Object.keys(error).length === 0) {
@@ -20,7 +21,6 @@ function Signup() {
         ...userInfo,
         role,
       };
-      console.log("aya");
       dispatch(sendSignupData(dataToSend));
     }
   }

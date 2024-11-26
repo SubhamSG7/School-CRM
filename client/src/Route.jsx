@@ -4,6 +4,7 @@ import PersonalDetails from "./Components/PersonalDetails";
 import ClassRoom from "./Components/ClassRoom";
 import HomePage from "./Pages/HomePage";
 import Login from "./Pages/Login";
+import AddClass from "./Pages/AddClass";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "signup",
         element: <Signup />,
+      },
+      {
+        path: "addclass",
+        element: <AddClass />,
       },
     ],
   },
