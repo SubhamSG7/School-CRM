@@ -53,7 +53,7 @@ const UserSchema = mongoose.Schema(
       enum: ["Student", "Teacher"],
     },
   },
-  { discriminatorKey: "role", timestamps: true } // Enable discriminators and add timestamps
+  { discriminatorKey: "role", timestamps: true }
 );
 
 // Hash password before saving
@@ -82,7 +82,7 @@ const StudentSchema = new mongoose.Schema({
   class: {
     type: Number,
     required: true,
-    enum: [1, 2, 3, 4, 5, 6, 7, 8], // Restrict to specific classes
+    enum: [1, 2, 3, 4, 5, 6, 7, 8],
   },
   teachers: [
     {
@@ -93,7 +93,6 @@ const StudentSchema = new mongoose.Schema({
   ],
 });
 
-// Apply Student discriminator
 const Student = User.discriminator("Student", StudentSchema);
 
 // Teacher schema

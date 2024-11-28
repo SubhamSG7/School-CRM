@@ -6,7 +6,6 @@ export const sendSignupData = createAsyncThunk(
   async (signupData, { rejectWithValue }) => {
     try {
       const url = import.meta.env.VITE_BackendURL;
-      console.log(url);
       const response = await axios.post(`${url}/api/signup`, signupData);
       return response.data;
     } catch (error) {
@@ -35,7 +34,8 @@ const SignupSlice = createSlice({
     setRole: (state, action) => {
       state.userInfo = {};
       state.error = {};
-      state.role = action.payload;
+      if (action.payload === "not selected") state.role = null;
+      else state.role = action.payload;
     },
     clearRole: (state, action) => {
       state.role = null;
@@ -59,7 +59,7 @@ const SignupSlice = createSlice({
         state.backendResponse = "loading";
       })
       .addCase(sendSignupData.fulfilled, (state, action) => {
-        state.backendResponse = "success";
+        state.backendResponse = action.payload;
       })
       .addCase(sendSignupData.rejected, (state, action) => {
         state.backendResponse = action.payload;

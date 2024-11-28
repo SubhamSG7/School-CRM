@@ -8,12 +8,12 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 function Signup() {
   const dispatch = useDispatch();
   const { role, classes, subjects, error, userInfo } = useSelector(
     (state) => state.signupslice
   );
-  console.log(userInfo);
   function handleSubmit(e) {
     e.preventDefault();
     if (Object.keys(error).length === 0) {

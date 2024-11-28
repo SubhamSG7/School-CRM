@@ -18,6 +18,11 @@ const classSchema = mongoose.Schema({
       ref: "Student",
     },
   ],
+  yearFee: {
+    type: String,
+    require: true,
+    default: 60000,
+  },
 });
 const Class = mongoose.model("Class", classSchema);
 export default Class;
