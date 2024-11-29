@@ -18,7 +18,7 @@ import paymentRoute from "./routes/paymentRoute.js";
 const app = express();
 const port = process.env.port || 3000;
 app.use(cookieParser());
-const allowedOrigins = ["http://localhost:5173"];
+const allowedOrigins = ["https://school-crm-bnyw.onrender.com"];
 
 app.use(
   cors({
