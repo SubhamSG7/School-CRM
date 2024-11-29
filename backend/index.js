@@ -16,6 +16,7 @@ import incomeAnalytics from "./routes/incomeAnalytics.js";
 import logoutRoute from "./routes/logoutRoute.js";
 import paymentRoute from "./routes/paymentRoute.js";
 const app = express();
+const port = process.env.port || 3000;
 app.use(cookieParser());
 const allowedOrigins = ["http://localhost:5173"];
 
@@ -51,6 +52,6 @@ app.get("/", (req, res) => {
   res.send("Hello,Welcome To School ORM Application");
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server is running on port 3000");
 });
