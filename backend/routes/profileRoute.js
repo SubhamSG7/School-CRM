@@ -13,6 +13,8 @@ router.get("/", async (req, res) => {
         email: userDetails.email,
         name: "Subham",
         role: userDetails.role,
+        gender: "male",
+        mobile: "7407901763",
       },
     });
   }

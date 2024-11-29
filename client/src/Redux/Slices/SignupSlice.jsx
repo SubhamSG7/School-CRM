@@ -40,6 +40,10 @@ const SignupSlice = createSlice({
     clearRole: (state, action) => {
       state.role = null;
     },
+    clearResponse: (state, action) => {
+      state.backendResponse = "";
+      (state.role = null), (state.userInfo = {});
+    },
     validate: (state, action) => {
       const incomingName = action.payload;
       let validationResult = validation(
@@ -66,6 +70,12 @@ const SignupSlice = createSlice({
       });
   },
 });
-export const { addInfo, clearInfo, clearRole, setRole, validate } =
-  SignupSlice.actions;
+export const {
+  addInfo,
+  clearInfo,
+  clearRole,
+  setRole,
+  validate,
+  clearResponse,
+} = SignupSlice.actions;
 export default SignupSlice.reducer;

@@ -20,9 +20,7 @@ router.post("/", async (req, res) => {
       return res.status(400).json({ message: "Invalid role" });
     }
 
-    return res
-      .status(201)
-      .json({ message: `${newUser.name} Welcome To School ORM` });
+    return res.status(201).json({ message: `SuccessFully Registered` });
   } catch (error) {
     console.error(error);
     return res

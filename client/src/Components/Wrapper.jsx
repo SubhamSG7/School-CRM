@@ -5,8 +5,8 @@ import { Outlet } from "react-router-dom";
 
 function Wrapper() {
   return (
-    <div className="w-[100%]">
-      <Header />
+    <div className="w-screen h-screen">
+      <Header className="h-[15vh]" />
       <Outlet />
       <Footer />
     </div>
