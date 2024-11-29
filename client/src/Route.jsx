@@ -15,7 +15,7 @@ import Teachers from "./Components/Teachers";
 import ClassAnalytics from "./Components/ClassAnalytics";
 import IncomeAnalytics from "./Components/IncomeAnalytics";
 import Profile from "./Pages/Profile";
-import StudentFee from "./Components/studentFee"; // hm
+import StudentFee from "./Components/StudentFee"; // hm
 import Salary from "./Components/Salary";
 
 const router = createBrowserRouter([
