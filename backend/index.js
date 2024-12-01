@@ -18,21 +18,25 @@ import paymentRoute from "./routes/paymentRoute.js";
 const app = express();
 const port = process.env.port || 3000;
 app.use(cookieParser());
-const allowedOrigins = ["https://school-crm-bnyw.onrender.com"];
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
-  })
-);
+const corsOptions = {
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      "https://craver-nine.vercel.app",
+      "https://craver-app.vercel.app", // Add the new frontend URL here
+    ];
 
+    // Check if the incoming origin is in the list of allowed origins
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true, // Allow cookies and authorization headers
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 mongoConnect();
 app.use("/api/getanalytics", incomeAnalytics);
