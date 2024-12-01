@@ -22,8 +22,8 @@ app.use(cookieParser());
 const corsOptions = {
   origin: function (origin, callback) {
     const allowedOrigins = [
-      "https://school-crm-5wdd.nine.app/loginp",
-      "https://school-crm-5wdd.vercel.app/login", // Add the new frontend URL here
+      "https://school-crm-5wdd.nine.app",
+      "https://school-crm-5wdd.vercel.app", // Add the new frontend URL here
     ];
 
     // Check if the incoming origin is in the list of allowed origins
